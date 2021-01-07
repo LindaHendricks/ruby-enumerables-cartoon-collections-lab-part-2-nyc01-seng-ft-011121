@@ -30,13 +30,12 @@ def find_valid_calls(planeteer_calls)
   valid_calls = ["Earth!", "Wind!", "Fire!", "Water!", "Heart!"]
   firstValidCall = ""
   
-  valid_calls_calls.each do |item|
-      planeteer_calls.each do |innerItem|
-        if item == innerItem
-          return item
-      end
-  end 
-  return nil
+  matches = planeteer_calls & valid_calls
+  
+  if matches != nil
+    return matches[0]
+  else
+    return nil
 end 
 
   # Use an Enumerable to check if any elements in the passed in array match the valid calls listed above 
